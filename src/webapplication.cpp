@@ -483,7 +483,7 @@ boost::shared_ptr<HttpResponse> RWebApplication::staticFileResponse(
   }
 
   // Make sure that there's no message body.
-  if ((pRequest->hasHeader("Content-Length") && pRequest->getHeader("Content-Length") != "16") || pRequest->hasHeader("Transfer-Encoding")) {
+  if ((pRequest->hasHeader("Content-Length") && pRequest->getHeader("Content-Length") != "0")) {
     return error_response(pRequest, 400);
   }
 
